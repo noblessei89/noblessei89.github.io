@@ -3,179 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dongjoo Kim - Researcher</title>
+    <title>Dongjoo Kim - Academic Profile</title>
+    <!-- 폰트 및 아이콘 로드 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #003C71; /* Texas A&M Navy inspired */
+            --sidebar-width: 320px;
+            --primary-color: #2c3e50; /* Navy Blue */
+            --accent-color: #3498db;   /* Bright Blue */
             --text-color: #333;
-            --bg-color: #fff;
-            --section-bg: #f9f9f9;
-            --link-color: #0056b3;
+            --light-text: #7f8c8d;
+            --bg-color: #fdfdfd;
+            --sidebar-bg: #1a252f;
+            --sidebar-text: #ecf0f1;
         }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .contact-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        section {
-            margin-bottom: 3rem;
-        }
-        h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        h3 {
-            margin-bottom: 0.2rem;
-            color: #222;
-        }
-        .item {
-            margin-bottom: 1.5rem;
-        }
-        .meta {
-            color: #666;
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .publication-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .publication-list li {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 3px solid #ddd;
-        }
-        .tag {
-            display: inline-block;
-            background: #eef;
-            color: var(--primary-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-right: 5px;
-            font-weight: 600;
-        }
-        ul.skills {
-            list-style: none;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        ul.skills li {
-            background: var(--section-bg);
-            padding: 5px 15px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-        }
-        footer {
+
+        /* --- 왼쪽 사이드바 --- */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 40px 30px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 2rem;
-            background: var(--section-bg);
-            font-size: 0.8rem;
-            color: #777;
+            border-right: 1px solid rgba(0,0,0,0.1);
         }
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .contact-info a { display: block; margin: 5px 0; }
+
+        /* 프로필 사진 영역 (사진이 없으면 아이콘 표시) */
+        .profile-placeholder {
+            width: 160px;
+            height: 160px;
+            background-color: #34495e;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #bdc3c7;
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
+        /* 실제 사진을 넣을 경우 이 주석을 해제하고 img 태그 사용 */
+        /* .profile-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; } */
+
+        aside h1 {
+            font-size: 1.8rem;
+            margin: 10px 0 5px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        aside .title {
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 12px 0;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info i {
+            width: 25px;
+            margin-right: 10px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        /* --- 오른쪽 메인 컨텐츠 --- */
+        main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 60px 80px;
+            max-width: 1000px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* 리스트 아이템 스타일 */
+        .item {
+            margin-bottom: 30px;
+        }
+
+        .item h3 {
+            margin: 0 0 5px;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .meta {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .item p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .item ul {
+            margin-top: 8px;
+            padding-left: 20px;
+            color: #555;
+        }
+        
+        .item ul li {
+            margin-bottom: 5px;
+        }
+
+        /* 출판물 리스트 스타일 */
+        .pub-section-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            font-weight: 600;
+        }
+
+        ul.pub-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.pub-list li {
+            position: relative;
+            padding-left: 5px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .pub-tag {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 5px;
+        }
+
+        /* 스킬 태그 스타일 */
+        .skill-tag {
+            display: inline-block;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 5px 8px 0;
+            border: 1px solid #bdc3c7;
+        }
+
+        /* 푸터 */
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 40px 20px;
+            }
+            main {
+                margin-left: 0;
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dongjoo Kim</h1>
-        <p>Ph.D. Student in Electrical Engineering at Texas A&M University</p>
-        <div class="contact-info">
-            <a href="mailto:djkim@tamu.edu">djkim@tamu.edu</a>
-            <a href="mailto:dongjoo_kim@seas.harvard.edu">dongjoo_kim@seas.harvard.edu</a>
-            <a href="https://linkedin.com/in/djkimpower" target="_blank">LinkedIn</a>
+    <!-- 왼쪽 사이드바: 프로필 정보 -->
+    <aside>
+        <div class="profile-placeholder">
+            <i class="fas fa-user"></i>
         </div>
-    </header>
+        <!-- 추후 사진 추가 시 아래 코드를 사용하고 위 placeholder를 지우세요 -->
+        <!-- <img src="profile.jpg" alt="Dongjoo Kim" class="profile-img"> -->
 
-    <div class="container">
+        <h1>Dongjoo Kim</h1>
+        <div class="title">
+            Ph.D. Student<br>
+            Electrical Engineering<br>
+            Texas A&M University
+        </div>
         
+        <div class="contact-info">
+            <a href="mailto:djkim@tamu.edu"><i class="fas fa-envelope"></i> djkim@tamu.edu</a>
+            <a href="mailto:dongjoo_kim@seas.harvard.edu"><i class="fas fa-university"></i> dongjoo_kim@seas.harvard.edu</a>
+            <a href="https://linkedin.com/in/djkimpower" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/djkimpower</a>
+            <!-- <a href="#"><i class="fas fa-phone"></i> (979) 344-1498</a> -->
+        </div>
+    </aside>
+
+    <!-- 오른쪽 메인 컨텐츠 -->
+    <main>
+        
+        <!-- About / Research Interests -->
         <section id="about">
             <h2>Research Interests</h2>
             <p>
-                Demand flexibility, electric vehicles, energy market, machine learning, and data analytics.
-                Dedicated to supporting rapid vehicle electrification with minimal grid impact while improving energy resilience.
+                My research interests lie in <strong>Demand Flexibility, Electric Vehicles, Energy Markets, Machine Learning, and Data Analytics</strong>.
+            </p>
+            <p>
+                I am dedicated to supporting rapid vehicle electrification with minimal grid impact while improving energy resilience.
             </p>
         </section>
 
+        <!-- Education -->
         <section id="education">
             <h2>Education</h2>
             <div class="item">
                 <h3>Texas A&M University</h3>
-                <span class="meta">College Station, TX | Aug 2022 - Current</span>
+                <span class="meta">Aug 2022 - Current | College Station, TX</span>
                 <p>Doctor of Philosophy in Electrical Engineering</p>
             </div>
             <div class="item">
                 <h3>Korea University</h3>
-                <span class="meta">Seoul, South Korea | Mar 2013 - Feb 2015</span>
+                <span class="meta">Mar 2013 - Feb 2015 | Seoul, South Korea</span>
                 <p>Master of Science in Electrical Engineering</p>
             </div>
             <div class="item">
                 <h3>Korea University</h3>
-                <span class="meta">Seoul, South Korea | Mar 2009 - Feb 2013</span>
+                <span class="meta">Mar 2009 - Feb 2013 | Seoul, South Korea</span>
                 <p>Bachelor of Science in Electrical Engineering</p>
             </div>
         </section>
 
+        <!-- Experience -->
         <section id="experience">
             <h2>Professional Experience</h2>
             
             <div class="item">
                 <h3>Harvard John A. Paulson School of Engineering and Applied Sciences (SEAS)</h3>
-                <span class="meta">Visiting Fellow | Allston, MA | Aug 2025 - Dec 2025</span>
+                <span class="meta">Aug 2025 - Dec 2025 | Allston, MA</span>
+                <p><strong>Visiting Fellow</strong></p>
             </div>
 
             <div class="item">
                 <h3>National Renewable Energy Laboratory (NREL)</h3>
-                <span class="meta">Research Intern | Golden, CO | May 2025 - Aug 2025</span>
+                <span class="meta">May 2025 - Aug 2025 | Golden, CO</span>
+                <p><strong>Research Intern</strong></p>
                 <p>Research on supporting rapid vehicle electrification with the least impacts, while improving energy resilience.</p>
             </div>
 
             <div class="item">
                 <h3>KEPCO Research Institute</h3>
-                <span class="meta">Senior Researcher | Daejeon, South Korea | Sep 2016 - Aug 2022</span>
+                <span class="meta">Sep 2016 - Aug 2022 | Daejeon, South Korea</span>
+                <p><strong>Senior Researcher</strong></p>
                 <ul>
                     <li>Developed DSO operating rules and congestion management technologies for distribution systems.</li>
                     <li>Implemented integrated smart metering solutions for efficient energy management.</li>
@@ -186,75 +319,86 @@
 
             <div class="item">
                 <h3>Daegu-Gyeongbuk Institute of Science & Technology (DGIST)</h3>
-                <span class="meta">Researcher | Daegu, South Korea | Mar 2015 - Sep 2016</span>
+                <span class="meta">Mar 2015 - Sep 2016 | Daegu, South Korea</span>
+                <p><strong>Researcher</strong></p>
                 <p>Statistical analysis for public wellness data.</p>
             </div>
         </section>
 
+        <!-- Publications -->
         <section id="publications">
-            <h2>Selected Publications</h2>
-            
-            <h3>Working Papers & Under Review</h3>
-            <ul class="publication-list">
-                <li><strong>[W4]</strong> Le Xie, <strong>Dongjoo Kim</strong>, and Guangchun Ruan, "From Crypto Mining to AI: Inter-Temporal Challenges and Opportunities for Data Centers in Power Systems" [Working Paper]</li>
-                <li><strong>[W3]</strong> <strong>Dongjoo Kim</strong>, and Nadia Panossian, "From Feeders to System: Quantifying How Smart Electric Vehicle Charging Grid-Stress Indicators Propagate to Network Upgrade Decisions" [Working Paper]</li>
-                <li><strong>[W2]</strong> Le Xie, <strong>Dongjoo Kim</strong>, Lin Dong, and Chanan Singh, "AI Data Center-Grid Interconnection: Theoretical Limits Now and Reform Needed Tomorrow" [Under Review]</li>
-                <li><strong>[W1]</strong> <strong>Dongjoo Kim</strong>, Lin Dong, and Le Xie, "Flexibility-Aware, Planner-Initiated Siting to Fast-Track Data Center Interconnections" [Under Review]</li>
+            <h2>Publications & Presentations</h2>
+
+            <div class="pub-section-title">Working Papers</div>
+            <ul class="pub-list">
+                <li><span class="pub-tag">[W4]</span> Le Xie, <strong>Dongjoo Kim</strong>, and Guangchun Ruan, "From Crypto Mining to AI: Inter-Temporal Challenges and Opportunities for Data Centers in Power Systems" [Working Paper]</li>
+                <li><span class="pub-tag">[W3]</span> <strong>Dongjoo Kim</strong>, and Nadia Panossian, "From Feeders to System: Quantifying How Smart Electric Vehicle Charging Grid-Stress Indicators Propagate to Network Upgrade Decisions" [Working Paper]</li>
+                <li><span class="pub-tag">[W2]</span> Le Xie, <strong>Dongjoo Kim</strong>, Lin Dong, and Chanan Singh, "AI Data Center-Grid Interconnection: Theoretical Limits Now and Reform Needed Tomorrow" [Under Review]</li>
+                <li><span class="pub-tag">[W1]</span> <strong>Dongjoo Kim</strong>, Lin Dong, and Le Xie, "Flexibility-Aware, Planner-Initiated Siting to Fast-Track Data Center Interconnections" [Under Review]</li>
             </ul>
 
-            <h3>Journal Papers</h3>
-            <ul class="publication-list">
-                <li><span class="tag">IEEE</span> <strong>[J3]</strong> <strong>Dongjoo Kim</strong>, Arun Karngala, Sienna Shi, and Le Xie, "Actionable Measures of Flexible Demand for Virtual Power Plants: Case Studies in Texas", <em>IEEE Electrification Magazine</em>, Vol. 13, pp. 75-83, Mar. 2025.</li>
-                <li><span class="tag">Energies</span> <strong>[J2]</strong> Jungsub Sim, Minsoo Kim, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Cloud Energy Storage System Operation with Capacity P2P Transaction", <em>Energies</em>, Vol.14, No.2, pp.1-12, Jul. 2021.</li>
-                <li><span class="tag">IEEE Access</span> <strong>[J1]</strong> Kyungnam Park, Jaeik Jeong, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Missing-Insensitive Short-Term Load Forecasting Leveraging Autoencoder and LSTM", <em>IEEE Access</em>, vol.8, No.1, pp.206039-206048, Nov. 2020.</li>
+            <div class="pub-section-title">Journal Papers</div>
+            <ul class="pub-list">
+                <li><span class="pub-tag">[J3]</span> <strong>Dongjoo Kim</strong>, Arun Karngala, Sienna Shi, and Le Xie, "Actionable Measures of Flexible Demand for Virtual Power Plants: Case Studies in Texas", <em>IEEE Electrification Magazine</em>, Vol. 13, pp. 75-83, Mar. 2025.</li>
+                <li><span class="pub-tag">[J2]</span> Jungsub Sim, Minsoo Kim, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Cloud Energy Storage System Operation with Capacity P2P Transaction", <em>Energies</em>, Vol.14, No.2, pp.1-12, Jul. 2021.</li>
+                <li><span class="pub-tag">[J1]</span> Kyungnam Park, Jaeik Jeong, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Missing-Insensitive Short-Term Load Forecasting Leveraging Autoencoder and LSTM", <em>IEEE Access</em>, vol.8, No.1, pp.206039-206048, Nov. 2020.</li>
             </ul>
 
-            <h3>Conference Papers</h3>
-            <ul class="publication-list">
-                <li><strong>[C9]</strong> <strong>Dongjoo Kim</strong>, Subir Majumder, and Le Xie, "A Multi-source Data Repository and Profit-robust Framework for Energy Storage Planning" [To appear]</li>
-                <li><strong>[C8]</strong> <strong>Dongjoo Kim</strong>, Arun Karngala, and Le Xie, "Estimation of Peak Demand Reduction using Smart Thermostats: A Texas Case Study", <em>IEEE PES Grid Edge 2025</em>, San Diego, CA, USA, Jan. 2025.</li>
-                <li><strong>[C7]</strong> <strong>Dongjoo Kim</strong>, S. Majumder, and Le Xie, "Line-Post Insulator Fault Classification Model using Deep Convolutional GAN-based Synthetic Images", <em>2023 North American Power Symposium (NAPS)</em>, Asheville, NC, USA, Oct. 2023.</li>
-                </ul>
+            <div class="pub-section-title">Conference Papers</div>
+            <ul class="pub-list">
+                <li><span class="pub-tag">[C9]</span> <strong>Dongjoo Kim</strong>, Subir Majumder, and Le Xie, "A Multi-source Data Repository and Profit-robust Framework for Energy Storage Planning" [To appear]</li>
+                <li><span class="pub-tag">[C8]</span> <strong>Dongjoo Kim</strong>, Arun Karngala, and Le Xie, "Estimation of Peak Demand Reduction using Smart Thermostats: A Texas Case Study", <em>IEEE PES Grid Edge 2025</em>, San Diego, CA, USA, Jan. 2025.</li>
+                <li><span class="pub-tag">[C7]</span> <strong>Dongjoo Kim</strong>, S. Majumder, and Le Xie, "Line-Post Insulator Fault Classification Model using Deep Convolutional GAN-based Synthetic Images", <em>2023 North American Power Symposium (NAPS)</em>, Asheville, NC, USA, Oct. 2023.</li>
+                <li><span class="pub-tag">[C6]</span> <strong>Dongjoo Kim</strong>, Seongchul Kwon, Jungsung Park, Moonsung Bae and Jonguk Lee, "Research on the Optimization of the District Energy Mix for Smart City Operation", <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.</li>
+                <li><span class="pub-tag">[C5]</span> Jungsung Park, Seongchul Kwon, Moonsung Bae, Jonguk Lee, and <strong>Dongjoo Kim</strong>, "Block-chain based Electricity Power Trading System Mechanisms and Operating Methods", <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.</li>
+                <li><span class="pub-tag">[C4]</span> <strong>Dongjoo Kim</strong>, Wonsuk Kang and Dongha Lee, "Day-ahead Maximum Load Forecasting using Similar Day", <em>Energy Systems Conferences 2016 (ENER 16)</em>, London, UK, Jun. 2016.</li>
+                <li><span class="pub-tag">[C3]</span> <strong>Dongjoo Kim</strong>, et al., "A Study on the Electrical Load Forecasting using Relevant Searched Keyword", <em>2014 Winter Conference of KICS</em>, Jeongseon, Korea, Jan. 2015.</li>
+                <li><span class="pub-tag">[C2]</span> <strong>Dongjoo Kim</strong>, et al., "Daily Peak Load Forecasting based on a Statistical Method for Outlier Detection...", <em>ICEE 2014</em>, Jeju, Korea, Jun. 2014.</li>
+                <li><span class="pub-tag">[C1]</span> <strong>Dongjoo Kim</strong>, et al., "Design of Hardware Prototype for Eliminating Noises from the Voltage Signal for Load", <em>ICEE 2013</em>, Xiamen, China, Jul. 2013.</li>
+            </ul>
         </section>
 
-         <section id="patents">
+        <!-- Patents -->
+        <section id="patents">
             <h2>Patents</h2>
-            <ul class="publication-list">
-                <li><strong>[P4]</strong> "Cloud Type Energy Storage Operating Method and System", 10-2589719, Korea, Sep 2023.</li>
-                <li><strong>[P3]</strong> "Unified Operation System and Method for Distributed Energy Resource", 10-2501608, Korea, Feb 2023.</li>
-                <li><strong>[P2]</strong> "Apparatus and Method for Integrating and Operating Small Power Resources for Operating Virtual Power Plants", Korea, Jul 2022.</li>
-                <li><strong>[P1]</strong> "Blockchain based Electricity Power Trading System...", 10-1976401, Korea, May 2019.</li>
+            <ul class="pub-list">
+                <li><span class="pub-tag">[P4]</span> "Cloud Type Energy Storage Operating Method and System", 10-2589719, Korea, Sep 2023.</li>
+                <li><span class="pub-tag">[P3]</span> "Unified Operation System and Method for Distributed Energy Resource", 10-2501608, Korea, Feb 2023.</li>
+                <li><span class="pub-tag">[P2]</span> "Apparatus and Method for Integrating and Operating Small Power Resources for Operating Virtual Power Plants", Korea, Jul 2022.</li>
+                <li><span class="pub-tag">[P1]</span> "Blockchain based Electricity Power Trading System...", 10-1976401, Korea, May 2019.</li>
             </ul>
         </section>
 
+        <!-- Awards -->
         <section id="awards">
             <h2>Honors & Awards</h2>
-            <ul class="publication-list">
-                <li><strong>Graduate Merit Fellowship</strong>, Dept. of Electrical and Computer Engineering, Texas A&M University (Aug 2022)</li>
-                <li><strong>R&D Achievement Award</strong>, President of KEPRI (Jun 2020)</li>
-                <li><strong>Best Paper Award</strong>, International Conference on Electrical Engineering (Jun 2020)</li>
-                <li><strong>Korea Techno Complex Scholarship</strong> (Mar 2014)</li>
-                <li><strong>BK21Plus Scholarship & General Scholarship</strong>, Korea University (Aug 2013)</li>
+            <ul class="pub-list">
+                <li><span class="pub-tag">[A5]</span> <strong>Graduate Merit Fellowship</strong>, Dept. of Electrical and Computer Engineering, Texas A&M University (Aug 2022)</li>
+                <li><span class="pub-tag">[A4]</span> <strong>R&D Achievement Award</strong>, President of KEPRI (Jun 2020)</li>
+                <li><span class="pub-tag">[A3]</span> <strong>Best Paper Award</strong>, International Conference on Electrical Engineering (Jun 2020)</li>
+                <li><span class="pub-tag">[A2]</span> <strong>Korea Techno Complex Scholarship</strong> (Mar 2014)</li>
+                <li><span class="pub-tag">[A1]</span> <strong>BK21Plus Scholarship & General Scholarship</strong>, Korea University (Aug 2013)</li>
             </ul>
         </section>
 
+        <!-- Skills -->
         <section id="skills">
             <h2>Skills</h2>
-            <ul class="skills">
-                <li>Python</li>
-                <li>MATLAB</li>
-                <li>GitHub</li>
-                <li>Machine Learning</li>
-                <li>Data Analytics</li>
-                <li>Microsoft Office</li>
-            </ul>
+            <div>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Data Analytics</span>
+                <span class="skill-tag">Microsoft Office</span>
+            </div>
         </section>
 
-    </div>
+        <footer>
+            &copy; 2025 Dongjoo Kim. All rights reserved.
+        </footer>
 
-    <footer>
-        <p>&copy; 2025 Dongjoo Kim. All rights reserved.</p>
-    </footer>
+    </main>
 
 </body>
 </html>
