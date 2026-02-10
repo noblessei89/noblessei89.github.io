@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dongjoo Kim - Academic Profile</title>
-    <!-- 아이콘 로드 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts: Inter (Apple 스타일의 가장 유사한 무료 웹폰트) 로드 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,15 +12,14 @@
     <style>
         :root {
             --sidebar-width: 320px;
-            --primary-color: #1d1d1f; /* Apple Style Dark Grey */
-            --accent-color: #0071e3;   /* Apple Style Blue */
+            --primary-color: #1d1d1f;
+            --accent-color: #0071e3;
             --text-color: #1d1d1f;
-            --light-text: #86868b;     /* Apple Style Light Grey */
+            --light-text: #86868b;
             --bg-color: #ffffff;
-            --sidebar-bg: #fbfbfd;     /* 아주 연한 회색 (거의 흰색) */
+            --sidebar-bg: #fbfbfd;
             --sidebar-border: #d2d2d7;
             
-            /* 폰트 설정: Apple 기기에서는 SF Pro를, 그 외에는 Inter를 사용 */
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -37,7 +34,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased; /* 폰트를 더 부드럽게 */
+            -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
@@ -51,15 +48,15 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid rgba(0,0,0,0.08); /* 경계선 더 연하게 */
-            text-align: left; /* 왼쪽 정렬로 변경하여 더 현대적인 느낌 */
+            border-right: 1px solid rgba(0,0,0,0.08);
+            text-align: left;
         }
 
         /* 프로필 사진 영역 */
         .profile-placeholder {
             width: 120px;
             height: 120px;
-            background-color: #e5e5ea; /* 밝은 회색 */
+            background-color: #e5e5ea;
             border-radius: 50%;
             margin-bottom: 30px;
             display: flex;
@@ -74,7 +71,7 @@
             margin: 0 0 10px 0;
             font-weight: 700;
             color: #1d1d1f;
-            letter-spacing: -0.02em; /* 자간을 살짝 좁혀 단단한 느낌 */
+            letter-spacing: -0.02em;
         }
 
         aside .title {
@@ -109,11 +106,11 @@
         .contact-info i {
             width: 24px;
             margin-right: 8px;
-            color: var(--text-color); /* 아이콘은 진하게 */
+            color: var(--text-color);
             font-size: 1rem;
         }
 
-        /* --- 위치 정보 섹션 스타일 (새로 추가됨) --- */
+        /* --- 위치 정보 섹션 --- */
         .location-box {
             margin-top: 40px;
             padding-top: 30px;
@@ -141,7 +138,7 @@
         .location-value i {
             color: var(--accent-color);
             margin-right: 12px;
-            margin-top: 3px; /* 아이콘 위치 미세 조정 */
+            margin-top: 3px;
         }
 
         .location-sub {
@@ -174,7 +171,6 @@
             align-items: center;
         }
         
-        /* 제목 옆에 작은 포인트 라인 */
         h2::before {
             content: '';
             display: inline-block;
@@ -185,12 +181,12 @@
             border-radius: 2px;
         }
 
-        /* 본문 텍스트 스타일 */
         p {
             color: #424245;
             font-size: 1.05rem;
             line-height: 1.7;
             font-weight: 400;
+            margin-bottom: 16px;
         }
         
         strong {
@@ -269,13 +265,33 @@
             margin-right: 10px;
         }
 
-        /* 스킬 태그 스타일 - Apple Badge 스타일 */
+        /* 링크 스타일 (새로 추가됨) */
+        .paper-link {
+            color: #1d1d1f;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+
+        .paper-link:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        /* 링크 아이콘 */
+        .link-icon {
+            font-size: 0.8em;
+            margin-left: 4px;
+            color: var(--accent-color);
+        }
+
+        /* 스킬 태그 스타일 */
         .skill-tag {
             display: inline-block;
             background-color: #f5f5f7;
             color: #1d1d1f;
             padding: 8px 16px;
-            border-radius: 20px; /* 더 둥글게 */
+            border-radius: 20px;
             font-size: 0.9rem;
             margin: 0 8px 12px 0;
             font-weight: 500;
@@ -286,7 +302,6 @@
             background-color: #e8e8ed;
         }
 
-        /* 푸터 */
         footer {
             margin-top: 80px;
             border-top: 1px solid #d2d2d7;
@@ -315,13 +330,8 @@
 </head>
 <body>
 
-    <!-- 왼쪽 사이드바: 프로필 정보 -->
     <aside>
-        <img src="profile.jpg" alt="Dongjoo Kim" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 30px;">
-        <!-- <div class="profile-placeholder"> -->
-            <i class="fas fa-user"></i>
-        </div>
-        <!-- 추후 사진 추가 시 아래 코드를 사용하고 위 placeholder를 지우세요 -->
+        <img src="profile.jpg" alt="Dongjoo Kim" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 30px; background-color: #e5e5ea;">
         
         <h1>Dongjoo Kim</h1>
         <div class="title">
@@ -331,13 +341,12 @@
         </div>
         
         <div class="contact-info">
-            <!-- <a href="mailto:dongjoo_kim@seas.harvard.edu"><i class="fas fa-envelope"></i> dongjoo_kim@seas.harvard.edu</a> -->
             <a href="mailto:djkim@tamu.edu"><i class="fas fa-envelope"></i> djkim@tamu.edu</a>
             <a href="https://linkedin.com/in/djkimpower" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
+            <a href="https://noblessei89.github.io" target="_blank"><i class="fas fa-globe"></i> Website</a>
             <a href="https://scholar.google.com/citations?user=7-pgIwUAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
         </div>
 
-        <!-- 현재 위치 섹션 -->
         <div class="location-box">
             <div class="location-label">Current Location</div>
             <div class="location-value">
@@ -350,20 +359,18 @@
         </div>
     </aside>
 
-    <!-- 오른쪽 메인 컨텐츠 -->
     <main>
         
-        <!-- About / Research Interests -->
         <section id="about">
             <h2>Research Interests</h2>
             <p>
-                My research focuses on the <strong>interconnection and integration of large flexible loads</strong>, with a particular emphasis on <strong>Data Centers</strong>. 
-                I investigate their potential <strong>market impacts</strong> and conduct rigorous <strong>congestion analyses</strong> to facilitate their seamless integration into the power grid.
-                Ultimately, I aim to develop data-driven strategies that ensure grid reliability and economic efficiency amidst the rapid growth of energy-intensive assets.
+                <strong>Power System Optimization & Markets:</strong> Economic dispatch, unit commitment, and multi-interval look-ahead dispatch to address the uncertainty and ramping challenges posed by hyperscale data centers and renewable integration in deregulated markets.
+            </p>
+            <p>
+                <strong>Grid Integration of Flexible Resources:</strong> Coordinating EV smart and data center demand response to provide ancillary services and enhance grid resilience.
             </p>
         </section>
 
-        <!-- Education -->
         <section id="education">
             <h2>Education</h2>
             <div class="item">
@@ -383,7 +390,6 @@
             </div>
         </section>
 
-        <!-- Experience -->
         <section id="experience">
             <h2>Professional Experience</h2>
             
@@ -420,52 +426,114 @@
             </div>
         </section>
 
-        <!-- Publications -->
         <section id="publications">
             <h2>Publications & Presentations</h2>
+            <p style="font-size: 0.9rem; color: #86868b; margin-bottom: 20px;">* Click on the titles to view the papers (External links).</p>
 
             <div class="pub-section-title">Working Papers</div>
             <ul class="pub-list">
-                <li><span class="pub-tag">W4</span> Harvard Kennedy School and <strong>Harvard John A. Paulson School of Engineering and Applied Sciences</strong>, "AI, Data Centers, and the U.S. Electric Grid: A Watershed Moment" [To be appeared on Harvard Kennedy School Policy Briefs]</li>
-                <li><span class="pub-tag">W4</span> Le Xie, <strong>Dongjoo Kim</strong>, and Guangchun Ruan, "From Crypto Mining to AI: Inter-Temporal Challenges and Opportunities for Data Centers in Power Systems" [Working Paper]</li>
-                <li><span class="pub-tag">W3</span> <strong>Dongjoo Kim</strong>, and Nadia Panossian, "From Feeders to System: Quantifying How Smart Electric Vehicle Charging Grid-Stress Indicators Propagate to Network Upgrade Decisions" [Working Paper]</li>
-                <li><span class="pub-tag">W2</span> Le Xie, <strong>Dongjoo Kim</strong>, Lin Dong, and Chanan Singh, "AI Data Center-Grid Interconnection: Theoretical Limits Now and Reform Needed Tomorrow" [Under Review]</li>
-                <li><span class="pub-tag">W1</span> <strong>Dongjoo Kim</strong>, Lin Dong, and Le Xie, "Flexibility-Aware, Planner-Initiated Siting to Fast-Track Data Center Interconnections" [Under Review]</li>
+                <li><span class="pub-tag">W5</span> <strong>Dongjoo Kim</strong>, Sanders Ho, Ali Malkawi, and Le Xie, “From House Zero to Grid Hero: Unlocking the VPP Potential of High-Performance Buildings” [Working Paper]</li>
+                <li><span class="pub-tag">W4</span> Le Xie, <strong>Dongjoo Kim</strong>, Qian Zhang, and Guangchun Ruan, “From Crypto Mining to AI: Reliability and Cost Challenges of Large Data Centers in Power Systems” [Working Paper]</li>
+                <li><span class="pub-tag">W3</span> <strong>Dongjoo Kim</strong>, and Nadia Panossian, “From Feeders to System: Quantifying How Smart Electric Vehicle Charging Grid-Stress Indicators Propagate to Network Upgrade Decisions” [Working Paper]</li>
+                <li><span class="pub-tag">W2</span> Le Xie, <strong>Dongjoo Kim</strong>, Lin Dong, and Chanan Singh, “AI Data Center-Grid Interconnection: Theoretical Limits Now and Reform Needed Tomorrow” [Under Review]</li>
+                <li><span class="pub-tag">W1</span> <strong>Dongjoo Kim</strong>, Lin Dong, and Le Xie, “Flexibility-Aware, Planner-Initiated Siting to Fast-Track Data Center Interconnections” [Under Review]</li>
+            </ul>
+
+            <div class="pub-section-title">Technical Reports</div>
+            <ul class="pub-list">
+                <li>
+                    <span class="pub-tag">T2</span> Rachel Mural, et al., 
+                    <a href="#" class="paper-link" target="_blank">“AI, Data Centers, and the U.S. Electric Grid: A Watershed Moment” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>Belfer Center for Science and International Affairs</em>, Feb. 2026.
+                </li>
+                <li>
+                    <span class="pub-tag">T1</span> <strong>Dongjoo Kim</strong>, Sienna Shi, Arun Karngala, and Le Xie, 
+                    <a href="#" class="paper-link" target="_blank">“Demand Response and Energy Efficiency in ERCOT” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>Public Utility Commission of Texas</em>, Oct. 2024.
+                </li>
             </ul>
 
             <div class="pub-section-title">Journal Papers</div>
             <ul class="pub-list">
-                <li><span class="pub-tag">J3</span> <strong>Dongjoo Kim</strong>, Arun Karngala, Sienna Shi, and Le Xie, "Actionable Measures of Flexible Demand for Virtual Power Plants: Case Studies in Texas", <em>IEEE Electrification Magazine</em>, Vol. 13, pp. 75-83, Mar. 2025.</li>
-                <li><span class="pub-tag">J2</span> Jungsub Sim, Minsoo Kim, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Cloud Energy Storage System Operation with Capacity P2P Transaction", <em>Energies</em>, Vol.14, No.2, pp.1-12, Jul. 2021.</li>
-                <li><span class="pub-tag">J1</span> Kyungnam Park, Jaeik Jeong, <strong>Dongjoo Kim</strong> and Hongseok Kim, "Missing-Insensitive Short-Term Load Forecasting Leveraging Autoencoder and LSTM", <em>IEEE Access</em>, vol.8, No.1, pp.206039-206048, Nov. 2020.</li>
+                <li>
+                    <span class="pub-tag">J3</span> <strong>Dongjoo Kim</strong>, Arun Karngala, Sienna Shi, and Le Xie, 
+                    <a href="#" class="paper-link" target="_blank">“Actionable Measures of Flexible Demand for Virtual Power Plants: Case Studies in Texas” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>IEEE Electrification Magazine</em>, Vol. 13, pp. 75-83, Mar. 2025.
+                </li>
+                <li>
+                    <span class="pub-tag">J2</span> Jungsub Sim, Minsoo Kim, <strong>Dongjoo Kim</strong> and Hongseok Kim, 
+                    <a href="#" class="paper-link" target="_blank">“Cloud Energy Storage System Operation with Capacity P2P Transaction” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>Energies</em>, Vol.14, No.2, pp.1-12, Jul. 2021.
+                </li>
+                <li>
+                    <span class="pub-tag">J1</span> Kyungnam Park, Jaeik Jeong, <strong>Dongjoo Kim</strong> and Hongseok Kim, 
+                    <a href="#" class="paper-link" target="_blank">“Missing-Insensitive Short-Term Load Forecasting Leveraging Autoencoder and LSTM” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>IEEE Access</em>, vol.8, No.1, pp.206039-206048, Nov. 2020.
+                </li>
             </ul>
 
             <div class="pub-section-title">Conference Papers</div>
             <ul class="pub-list">
-                <li><span class="pub-tag">C9</span> <strong>Dongjoo Kim</strong>, Subir Majumder, and Le Xie, "A Multi-source Data Repository and Profit-robust Framework for Energy Storage Planning" <em>2025 North American Power Symposium (NAPS)</em>, Hartford, CT, USA, Oct. 2025.</li>
-                <li><span class="pub-tag">C8</span> <strong>Dongjoo Kim</strong>, Arun Karngala, and Le Xie, "Estimation of Peak Demand Reduction using Smart Thermostats: A Texas Case Study", <em>IEEE PES Grid Edge 2025</em>, San Diego, CA, USA, Jan. 2025.</li>
-                <li><span class="pub-tag">C7</span> <strong>Dongjoo Kim</strong>, S. Majumder, and Le Xie, "Line-Post Insulator Fault Classification Model using Deep Convolutional GAN-based Synthetic Images", <em>2023 North American Power Symposium (NAPS)</em>, Asheville, NC, USA, Oct. 2023.</li>
-                <li><span class="pub-tag">C6</span> <strong>Dongjoo Kim</strong>, Seongchul Kwon, Jungsung Park, Moonsung Bae and Jonguk Lee, "Research on the Optimization of the District Energy Mix for Smart City Operation", <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.</li>
-                <li><span class="pub-tag">C5</span> Jungsung Park, Seongchul Kwon, Moonsung Bae, Jonguk Lee, and <strong>Dongjoo Kim</strong>, "Block-chain based Electricity Power Trading System Mechanisms and Operating Methods", <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.</li>
-                <li><span class="pub-tag">C4</span> <strong>Dongjoo Kim</strong>, Wonsuk Kang and Dongha Lee, "Day-ahead Maximum Load Forecasting using Similar Day", <em>Energy Systems Conferences 2016 (ENER 16)</em>, London, UK, Jun. 2016.</li>
-                <li><span class="pub-tag">C3</span> <strong>Dongjoo Kim</strong>, et al., "A Study on the Electrical Load Forecasting using Relevant Searched Keyword", <em>2014 Winter Conference of KICS</em>, Jeongseon, Korea, Jan. 2015.</li>
-                <li><span class="pub-tag">C2</span> <strong>Dongjoo Kim</strong>, et al., "Daily Peak Load Forecasting based on a Statistical Method for Outlier Detection...", <em>ICEE 2014</em>, Jeju, Korea, Jun. 2014.</li>
-                <li><span class="pub-tag">C1</span> <strong>Dongjoo Kim</strong>, et al., "Design of Hardware Prototype for Eliminating Noises from the Voltage Signal for Load", <em>ICEE 2013</em>, Xiamen, China, Jul. 2013.</li>
+                <li>
+                    <span class="pub-tag">C9</span> <strong>Dongjoo Kim</strong>, Subir Majumder, and Le Xie, 
+                    <a href="#" class="paper-link" target="_blank">“A Multi-source Data Repository and Profit-robust Framework for Energy Storage Planning” <i class="fas fa-external-link-alt link-icon"></i></a>,
+                    <em>2025 NAPS</em>, Hartford, CT, USA, Oct. 2025.
+                </li>
+                <li>
+                    <span class="pub-tag">C8</span> <strong>Dongjoo Kim</strong>, Arun Karngala, and Le Xie, 
+                    <a href="#" class="paper-link" target="_blank">“Estimation of Peak Demand Reduction using Smart Thermostats: A Texas Case Study” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>IEEE PES Grid Edge 2025</em>, San Diego, CA, USA, Jan. 2025.
+                </li>
+                <li>
+                    <span class="pub-tag">C7</span> <strong>Dongjoo Kim</strong>, S. Majumder, and Le Xie, 
+                    <a href="#" class="paper-link" target="_blank">“Line-Post Insulator Fault Classification Model using Deep Convolutional GAN-based Synthetic Images” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>2023 NAPS</em>, Asheville, NC, USA, Oct. 2023.
+                </li>
+                <li>
+                    <span class="pub-tag">C6</span> <strong>Dongjoo Kim</strong>, et al., 
+                    <a href="#" class="paper-link" target="_blank">“Research on the Optimization of the District Energy Mix for Smart City Operation” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.
+                </li>
+                <li>
+                    <span class="pub-tag">C5</span> Jungsung Park, et al., 
+                    <a href="#" class="paper-link" target="_blank">“Block-chain based Electricity Power Trading System Mechanisms and Operating Methods” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>25th CIRED</em>, Madrid, Spain, Jun. 2019.
+                </li>
+                <li>
+                    <span class="pub-tag">C4</span> <strong>Dongjoo Kim</strong>, Wonsuk Kang and Dongha Lee, “Day-ahead Maximum Load Forecasting using Similar Day”, <em>ENER 16</em>, London, UK, Jun. 2016.
+                </li>
+                <li>
+                    <span class="pub-tag">C3</span> <strong>Dongjoo Kim</strong>, et al., “A Study on the Electrical Load Forecasting using Relevant Searched Keyword”, <em>2014 Winter Conference of KICS</em>, Jeongseon, Korea, Jan. 2015.
+                </li>
             </ul>
         </section>
 
-        <!-- Patents -->
+        <section id="news">
+            <h2>News & Media</h2>
+            <ul class="pub-list">
+                <li>
+                    <span class="pub-tag">N2</span> 
+                    <a href="#" class="paper-link" target="_blank">“Demand Flexibility for the Electric Reliability Council of Texas (ERCOT)” <i class="fas fa-external-link-alt link-icon"></i></a> 
+                    at <em>BERC Workshop</em>, April 30, 2024.
+                </li>
+                <li>
+                    <span class="pub-tag">N1</span> 
+                    <a href="#" class="paper-link" target="_blank">“Demand Flexibility in Texas” <i class="fas fa-external-link-alt link-icon"></i></a>, 
+                    <em>Energizer Newsletter</em>, Texas A&M Energy Institute, August 2024.
+                </li>
+            </ul>
+        </section>
+
         <section id="patents">
             <h2>Patents</h2>
             <ul class="pub-list">
-                <li><span class="pub-tag">P4</span> "Cloud Type Energy Storage Operating Method and System", 10-2589719, Korea, Sep 2023.</li>
-                <li><span class="pub-tag">P3</span> "Unified Operation System and Method for Distributed Energy Resource", 10-2501608, Korea, Feb 2023.</li>
-                <li><span class="pub-tag">P2</span> "Apparatus and Method for Integrating and Operating Small Power Resources for Operating Virtual Power Plants", Korea, Jul 2022.</li>
-                <li><span class="pub-tag">P1</span> "Blockchain based Electricity Power Trading System...", 10-1976401, Korea, May 2019.</li>
+                <li><span class="pub-tag">P4</span> <a href="#" class="paper-link" target="_blank">"Cloud Type Energy Storage Operating Method and System" <i class="fas fa-external-link-alt link-icon"></i></a>, 10-2589719, Korea, Sep 2023.</li>
+                <li><span class="pub-tag">P3</span> <a href="#" class="paper-link" target="_blank">"Unified Operation System and Method for Distributed Energy Resource" <i class="fas fa-external-link-alt link-icon"></i></a>, 10-2501608, Korea, Feb 2023.</li>
+                <li><span class="pub-tag">P2</span> <a href="#" class="paper-link" target="_blank">"Apparatus and Method for Integrating and Operating Small Power Resources for Operating Virtual Power Plants" <i class="fas fa-external-link-alt link-icon"></i></a>, Korea, Jul 2022.</li>
+                <li><span class="pub-tag">P1</span> <a href="#" class="paper-link" target="_blank">"Blockchain based Electricity Power Trading System..." <i class="fas fa-external-link-alt link-icon"></i></a>, 10-1976401, Korea, May 2019.</li>
             </ul>
         </section>
 
-        <!-- Awards -->
         <section id="awards">
             <h2>Honors & Awards</h2>
             <ul class="pub-list">
@@ -477,7 +545,6 @@
             </ul>
         </section>
 
-        <!-- Skills -->
         <section id="skills">
             <h2>Skills</h2>
             <div>
